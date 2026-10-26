@@ -1,0 +1,19 @@
+[Desktop Entry]
+Name=Widefield White
+Comment=Tema global para KDE Plasma 6, variante clara: barra superior com menu global e dock inferior. Fork do WhiteSur-kde.
+Encoding=UTF-8
+Keywords=Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;
+Type=Service
+
+X-KDE-ParentApp=
+X-KDE-ServiceTypes=Plasma/LookAndFeel
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-Author=Claudio Almeida (baseado no WhiteSur-kde de Vince Liuice / vinceliuice)
+X-KDE-PluginInfo-Email=claudio132009@gmail.com
+X-KDE-PluginInfo-License=GPL-3.0
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Name=com.claudio.widefield-white
+X-KDE-PluginInfo-Website=https://github.com/Clouddios/widefield-kde
+X-KDE-fallbackPackage=org.kde.breeze.desktop
+X-Plasma-MainScript=defaults
