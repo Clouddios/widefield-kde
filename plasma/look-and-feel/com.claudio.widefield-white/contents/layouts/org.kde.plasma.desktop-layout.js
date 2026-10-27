@@ -2,30 +2,16 @@
 const launcherIcon = (applicationExists("cachyos-hello") || applicationExists("cachyos-kernel-manager"))
     ? "cachyos" : "start-here-kde"
 
-// Restrict horizontal panel to a maximum size of a 21:9 monitor
-const maximumAspectRatio = 21/9;
-
 // Top bar on every screen. Screen 0 is the primary one and also gets the
 // system tray; the others get launcher, global menu and clock only.
 function addTopBar(screen) {
     var panel = new Panel
     panel.screen = screen
-    // For an Icons-Only Task Manager on the bottom, *3 is too much, *2 is too little
-    // Round down to next highest even number since the Panel size widget only displays
-    // even numbers
-    panel.height = 2 * Math.floor(gridUnit * 2.5 / 2)
+    // Thin, full-width bar glued to the top edge, like the macOS menu bar.
+    // Rounded to an even number since the Panel size widget only displays even numbers
     panel.location = "top"
-
-    if (panel.formFactor === "horizontal") {
-        const geo = screenGeometry(screen);
-        const maximumWidth = Math.ceil(geo.height * maximumAspectRatio);
-
-        if (geo.width > maximumWidth) {
-            panel.alignment = "center";
-            panel.minimumLength = maximumWidth;
-            panel.maximumLength = maximumWidth;
-        }
-    }
+    panel.height = 2 * Math.round(gridUnit * 1.5 / 2)
+    panel.floating = false
 
     var kickoff = panel.addWidget("org.kde.plasma.kickoff")
     kickoff.currentConfigGroup = ["General"]
@@ -37,13 +23,8 @@ function addTopBar(screen) {
 
     // Global menu right after the launcher
     panel.addWidget("org.kde.plasma.appmenu")
+    // Two flexible spacers around the clock keep it centered on the panel
     panel.addWidget("org.kde.plasma.panelspacer")
-
-    if (screen === 0) {
-        panel.addWidget("org.kde.plasma.marginsseparator")
-        panel.addWidget("org.kde.plasma.systemtray")
-    }
-    panel.addWidget("org.kde.plasma.marginsseparator")
 
     // Clock with the date on the same line, e.g. "seg 26 out  14:30", 24h
     let clock = panel.addWidget("org.kde.plasma.digitalclock")
@@ -54,7 +35,11 @@ function addTopBar(screen) {
     clock.writeConfig("customDateFormat", "ddd d MMM")
     clock.writeConfig("use24hFormat", 2) // Qt.Checked = always 24h
 
+    panel.addWidget("org.kde.plasma.panelspacer")
+
     if (screen === 0) {
+        panel.addWidget("org.kde.plasma.systemtray")
+        panel.addWidget("org.kde.plasma.marginsseparator")
         panel.addWidget("org.kde.plasma.showdesktop")
     }
 }
@@ -63,13 +48,14 @@ for (var i = 0; i < screenCount; i++) {
     addTopBar(i)
 }
 
-// Dock on the primary screen only
+// Vertical dock on the right edge of the primary screen
 var bpanel = new Panel
 bpanel.screen = 0
-bpanel.location = "bottom"
+bpanel.location = "right"
 bpanel.lengthMode = "fit"
 bpanel.hiding = "dodgewindows"
-bpanel.height = 64
+bpanel.floating = true
+bpanel.height = 44
 
 let taskBar = bpanel.addWidget("org.kde.plasma.icontasks")
 taskBar.currentConfigGroup = ["General"]

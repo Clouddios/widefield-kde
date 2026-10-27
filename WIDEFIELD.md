@@ -5,7 +5,7 @@ Tema global para KDE Plasma 6 com barra superior (lançador, menu global, bandej
 - **Widefield White** (`com.claudio.widefield-white`): clara
 - **Widefield Dark** (`com.claudio.widefield-dark`): escura
 
-Os padrões são ícones `kora`, cursor `WhiteSur-cursors` e splash `org.kde.Breeze`. O lançador usa o logo do CachyOS quando ele existe e `start-here-kde` nos outros sistemas. Nenhuma das variantes traz logo ou marca da Apple.
+Os padrões são ícones `WhiteSur` (`WhiteSur-dark` na variante escura), cursor `WhiteSur-cursors` e splash `org.kde.Breeze`. O lançador usa o logo do CachyOS quando ele existe e `start-here-kde` nos outros sistemas. Nenhuma das variantes traz logo ou marca da Apple.
 
 ## O nome
 
@@ -17,10 +17,10 @@ Widefield é um fork do [WhiteSur-kde](https://github.com/vinceliuice/WhiteSur-k
 
 ## Instalação
 
-Dependências: Kvantum, ícones kora e cursor WhiteSur. No Arch/CachyOS:
+Dependências: Kvantum, ícones e cursor WhiteSur. No Arch/CachyOS:
 
 ```bash
-paru -S kvantum kora-icon-theme whitesur-cursor-theme-git
+paru -S kvantum whitesur-icon-theme whitesur-cursor-theme-git
 ```
 
 Depois:
