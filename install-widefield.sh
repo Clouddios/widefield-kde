@@ -16,6 +16,17 @@ fi
 echo "==> Installing WhiteSur base (style, colors, decoration)..."
 (cd "$SRC_DIR" && ./install.sh)
 
+# The global themes pick widgetStyle=kvantum / kvantum-dark, but Kvantum's
+# own theme choice lives outside kdeglobals. "WhiteSur" makes kvantum-dark
+# use WhiteSurDark automatically.
+KVANTUM_CONFIG="$HOME/.config/Kvantum/kvantum.kvconfig"
+current_kvantum="$(kreadconfig6 --file "$KVANTUM_CONFIG" --group General --key theme 2>/dev/null || true)"
+if [[ "$current_kvantum" != "WhiteSur" ]]; then
+  echo "==> Setting Kvantum theme to WhiteSur (was: ${current_kvantum:-none})..."
+  mkdir -p "$(dirname "$KVANTUM_CONFIG")"
+  kwriteconfig6 --file "$KVANTUM_CONFIG" --group General --key theme WhiteSur
+fi
+
 echo "==> Installing Widefield global themes..."
 mkdir -p "$LOOKFEEL_DIR"
 for variant in "${VARIANTS[@]}"; do

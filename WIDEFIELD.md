@@ -17,6 +17,14 @@ Widefield é um fork do [WhiteSur-kde](https://github.com/vinceliuice/WhiteSur-k
 
 ## Instalação
 
+Dependências: Kvantum, ícones kora e cursor WhiteSur. No Arch/CachyOS:
+
+```bash
+paru -S kvantum kora-icon-theme whitesur-cursor-theme-git
+```
+
+Depois:
+
 ```bash
 git clone -b widefield https://github.com/Clouddios/widefield-kde.git
 cd widefield-kde
@@ -30,4 +38,14 @@ Pelo terminal (substitui os painéis):
 
 ```bash
 plasma-apply-lookandfeel --apply com.claudio.widefield-dark --resetLayout
+```
+
+Com mais de um monitor, todos ganham a barra superior. A bandeja e a dock ficam só no monitor principal.
+
+O Plasma 6 não aplica a ordem dos botões das janelas a partir do tema global. Para deixar fechar, minimizar e maximizar à esquerda:
+
+```bash
+kwriteconfig6 --file kwinrc --group org.kde.kdecoration2 --key ButtonsOnLeft XIA
+kwriteconfig6 --file kwinrc --group org.kde.kdecoration2 --key ButtonsOnRight ""
+qdbus6 org.kde.KWin /KWin reconfigure
 ```

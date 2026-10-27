@@ -17,7 +17,7 @@ LayoutName=org.kde.breeze.desktop
 LayoutName=org.kde.breeze.desktop
 
 [kwinrc][org.kde.kdecoration2]
-ButtonsOnLeft=XAI
+ButtonsOnLeft=XIA
 ButtonsOnRight=
 library=org.kde.kwin.aurorae
 theme=__aurorae__svg__WhiteSur-dark
