@@ -1,3 +1,5 @@
+> **Widefield**: este é o fork Widefield do WhiteSur-kde, com os temas globais Widefield White e Widefield Dark. Instalação e detalhes em [WIDEFIELD.md](WIDEFIELD.md). O texto abaixo é o README original do WhiteSur.
+
 <img src="https://github.com/vinceliuice/Sierra-gtk-theme/blob/imgs/logo.png" alt="Logo" align="right" /> WhiteSur KDE Theme
 ======
 
