@@ -16,7 +16,7 @@
             "Plasma/LookAndFeel"
         ],
         "EnabledByDefault": true,
-        "Description": "Tema global para KDE Plasma 6, variante escura: barra superior com menu global e dock inferior. Fork do WhiteSur-kde.",
+        "Description": "Tema global para KDE Plasma 6, variante escura: barra superior com menu global e dock à direita. Fork do WhiteSur-kde.",
         "Id": "com.claudio.widefield-dark",
         "License": "GPL-3.0",
         "Name": "Widefield Dark",

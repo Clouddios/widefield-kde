@@ -1,6 +1,6 @@
 # Widefield
 
-Tema global para KDE Plasma 6 com barra superior (lançador, menu global, bandeja e relógio) e dock inferior. Tem duas variantes:
+Tema global para KDE Plasma 6 com barra superior (lançador, menu global, relógio no centro e bandeja) e dock vertical à direita. Tem duas variantes:
 
 - **Widefield White** (`com.claudio.widefield-white`): clara
 - **Widefield Dark** (`com.claudio.widefield-dark`): escura
